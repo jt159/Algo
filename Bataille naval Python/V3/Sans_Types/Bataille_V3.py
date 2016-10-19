@@ -17,6 +17,20 @@ Grille=[];
 
 for v in range(21):
 	Grille.append([0]*20);
+	
+#Fonctions utilisés : 
+
+def envue(Grille, xvue, yvue): 
+	envue=bool(False);
+	p=int(0);
+	while envue==False and p<21:
+		if Grille[p][yvue]>0 or Grille[xvue][p]>0:
+			envue=True;
+		p=p+1;
+			
+	return envue
+	
+#Debut Main 
 # Saisie de la position des 5 bateaux : 
 for i in range(0,5):
 
@@ -57,11 +71,9 @@ while (sum(Tailles)):
 		Grille[xtir][ytir]=Grille[xtir][ytir]-1;
 		for j in range(0,20):
 			print(Grille[j]);
-	elif (xtir==x or ytir==y):
+	elif (envue(Grille,xtir,ytir)):
 		print("En vue ! ");
 	else:
 		print("A l'eau !");
 
 	print(Tailles);
-
-#End
