@@ -15,10 +15,13 @@ class Joueur:
 		self.nbBat=0;
 
 	def ajouterBateau(self, taille): 
-		#Ajoute un bateau sur la grille du joueur
+		#Crée un nouveau bateau pour le joueur de taille n passé en paramètre 
 
-	def tirer(self, x, y):
+	def tir(self, x, y):
 		#Renvoie le resultat d'un tire de l'autre joueur au coordonnées (x,y)
+
+	def enJeu(self): 
+		#Renvoie true si le joueur a encore des bateaux en jeu
 
 	
 

@@ -11,5 +11,7 @@ class bateau:
 		self.taille=tailleBat
 
 
+	def touche(self):
+		#renvoie le bateau avec sa taille reduite de 1 
 
-
+	
