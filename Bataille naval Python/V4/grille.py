@@ -38,7 +38,7 @@ class Grille :
 		#Renvoie True si la grille ne comporte plus aucun bateau
 
 	def tirer(self, xtire, ytire): 
-		#Renvoie le resultat du tire (touché, coulé ou en vue)
+		#Renvoie le resultat du tir (touché, coulé ou en vue)
 
 
 		
