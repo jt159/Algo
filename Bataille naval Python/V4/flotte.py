@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+# -*- coding: utf8 -*-
 
 class Flotte:
 
@@ -8,14 +9,27 @@ class Flotte:
 
 
 	def ajouterBateau(self, tailleBat):
-		#Ajoute un bateau et sa taille à la flotte 
+		#Données: Flotte et taille du bateau
+		#Pré-conditions: tailleBat:int
+		#Resultat: Ajoute un bateau et sa taille à la flotte
+		#Post-conditions: Flotte
 
-	def taille(self, numBat): 
-		#Renvoie la taille du bateau placé en paramètre
+	def taille(self, numBat):
+		#Données: Flotte et numéro du bateau
+		#Pré-conditions: numBat:int
+		#Resultat: Renvoie la taille du bateau placé en paramètre 
+		#Post-conditions: tailleBat:int
 
-	def redTaille(self, numBat): 
-		#décrémente la taille du bateau placé en paramètre
+	def touche(self, numBat):
+		#Données: Flotte et numéro du bateau
+		#Pré-conditions: numBat:int  
+		#Resultat: Décrémente la taille du bateau placé en paramètre et renvoie la flotte modifiée
+		#Post-conditions: Flotte
 
 	
-
+	def coule(self, numBat)
+		#Données: Flotte et numéro du bateau
+		#Pré-conditions: numBat:int
+		#Resultat: Renvoie True si la taille du bateau est égale à 0, renvoie False sinon
+		#Post-conditions: bool
 	

@@ -1,5 +1,8 @@
+#!/usr/bin/python
+# -*- coding: utf8 -*-
 from grille import *;
 from flotte import *;
+
 
 
 class Joueur:
@@ -8,7 +11,11 @@ class Joueur:
 		#Initialise un joueur, son nom, sa grille avec sa taille associé et sa flotte
 
 	def name(self):
-		#return player name 
+		#Données: Joueur
+		#Pré-conditions: --- 
+		#Resultat: renvoie Nom du joueur
+		#Post-conditions: String
+		
 
 	
 	

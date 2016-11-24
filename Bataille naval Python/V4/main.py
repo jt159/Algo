@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf8 -*-
 from joueur import *;
 from grille import *;
 from flotte import *;
@@ -13,13 +15,13 @@ print(" ");
 
 #Saisie du nom des deux joueurs par l'utilisateur 
 print("Entrez le nom du Joueur 1 : ")
-NomJoueur1=input(); #On récupère le nom du joueur 
-Joueur1=Joueur(NomJoueur1, tailleGrille); #On crée le joueur 
+NomJoueur1=input(); #On récupère le nom du premier joueur 
+Joueur1=Joueur(NomJoueur1, tailleGrille); #On crée le premier joueur 
 
 
 print("Entrez le nom du Joueur 2 : ")
-NomJoueur2=input(); #On récupère le nom du joueur 
-Joueur2=Joueur(NomJoueur2, tailleGrille); #On crée le joueur 
+NomJoueur2=input(); #On récupère le nom du second joueur 
+Joueur2=Joueur(NomJoueur2, tailleGrille); #On crée le second joueur 
 
 print("La partie va opposer "+Joueur1+" à "+Joueur2+" !");
 
@@ -52,14 +54,14 @@ for i in range(0,nbat):
 	y=-1
 	#On place la première coordonnée du bateau i
 	while (Joueur1.Grille.verificationCoordonnees(x,y)==False):
-			print("Entrez la "+(t+1)+" position du bateau"+(i+1)+" :")
-			print("x = ");
-			x=input();
+		print("Entrez la "+(t+1)+" position du bateau"+(i+1)+" :")
+		print("x = ");
+		x=input();
 
-			print("y = ");
-			y=input();
+		print("y = ");
+		y=input();
 
-		Joueur1.Grille.placerPositionBateau(i,x,y)
+		Joueur1.Grille.placerPositionBateau(i,x,y);
 
 	for t in range(1,Joueur1.Flotte.getTaille(i)):
 		x=-1;
@@ -86,12 +88,12 @@ for i in range(0,nbat):
 	y=-1
 	#On place la première coordonnée du bateau i
 	while (Joueur2.Grille.verificationCoordonnees(x,y)==False):
-			print("Entrez la "+(t+1)+" position du bateau"+(i+1)+" :")
-			print("x = ");
-			x=input();
+		print("Entrez la "+(t+1)+" position du bateau"+(i+1)+" :")
+		print("x = ");
+		x=input();
 
-			print("y = ");
-			y=input();
+		print("y = ");
+		y=input();
 
 		Joueur2.Grille.placerPositionBateau(i,x,y)
 
@@ -119,7 +121,7 @@ print("==================== Début du jeu ========================");
 #Début du jeu
 tourDeJeu=1;
 
-while (!(Joueur1.Grille.estVide()) or !(Joueur2.Grille.estVide())): 
+while ((Joueur1.Grille.estVide()==False) or (Joueur2.Grille.estVide()==False)): 
 	if (tourDeJeu==1):
 		print(Joueur1.name()+ " à toi de tirer !");
 		#Joueur 1 tire
@@ -133,7 +135,7 @@ while (!(Joueur1.Grille.estVide()) or !(Joueur2.Grille.estVide())):
 		print(result);
 
 
-		tourDeJeu=2; #Changment de tour
+		tourDeJeu=2; #Changement de tour
 
 	else: 
 		print(Joueur1.name()+ " à toi de tirer !");
@@ -148,7 +150,7 @@ while (!(Joueur1.Grille.estVide()) or !(Joueur2.Grille.estVide())):
 		result=Joueur1.Grille.tirer(a,b);
 		print(result);
 
-		tourDeJeu=1; #Changment de tour
+		tourDeJeu=1; #Changement de tour
 
 
 print("==================== Fin du jeu ========================");
