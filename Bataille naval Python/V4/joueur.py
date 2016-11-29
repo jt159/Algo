@@ -8,22 +8,27 @@ from flotte import *;
 class Joueur:
 
 	def __init__(self, nomJoueur, tailleGrille):
-		#Initialise un joueur, son nom, sa grille avec sa taille associé et sa flotte
+		#Initialise un joueur avec son nom passé en paramètre
+        # Renvoie erreur si le joueur n'a pas été créé
 
-	def name(self):
+
+
+
+
+    def name(self):
 		#Données: Joueur
-		#Pré-conditions: --- 
+		#Pré-conditions: ---
 		#Resultat: renvoie Nom du joueur
 		#Post-conditions: String
-		
 
-	
-	
 
-	
 
-	
 
-		
+
+
+
+
+
+
 
 

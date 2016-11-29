@@ -6,28 +6,32 @@ class Grille :
 
 	def __init__(self, tailleGrille):
 		#Initialise une grille, avec comme paramètre la taille de celle-ci.
+        #Renvoie erreur si grille n'a pas été initialisée
 
 
 
-	def getBateau (self, xBat, yBat):
+	def placerPositionBateau(self, numBat, xBat, yBat):
+		#Données: Grille, numéro du bateau à placer, et coordonnées indiquant où on veut le placer
+		#Pré-conditions: numBat:int, xBat:int, yBat:int
+		#Resultat: Ajoute le bateau de numéro numBat à la position (xBat,yBat) sur la grille du joueur et renvoie la grille. Renvoie erreur si la position n'est pas ajoutée !
+		#Post-conditions:
+
+
+    def getBateau (self, xBat, yBat):
 		#Données: Grille et coordonnées étudiées
 		#Pré-conditions: xBat:int, yBat:int
 		#Resultat: Renvoie le numéro du bateau correspondant aux coordonnées xBat, yBat, ou renvoie 0 s'il n'y pas de bateau
 		#Post-conditions: numBat:int
 
 
-	def placerPositionBateau(self, numBat, xBat, yBat):
-		#Données: Grille, numéro du bateau à placer, et coordonnées indiquant où on veut le placer
-		#Pré-conditions: numBat:int, xBat:int, yBat:int
-		#Resultat: Ajoute le bateau de numéro numBat à la position (xBat,yBat) sur la grille du joueur et renvoie la grille
-		#Post-conditions:  Grille
+
 
 
 	def supprimerPosition(self, xBat, yBat):
 		#Données: Grille et cordonnées (xBat,yBat)
 		#Pré-conditions: xBat:int, yBat:int , on suppose vérfifiée le fait que la postion contient un bateau
 		#Resultat: Supprime la position indiquée par les coordonnées (xBat,yBat) et renvoie la grille modifiée
-		#Post-conditions: Grille
+		#Post-conditions:
 
 
 	def envue(self, xTir, yTir):
