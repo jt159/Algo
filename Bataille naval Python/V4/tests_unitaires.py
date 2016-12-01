@@ -267,5 +267,3 @@ def test_coule():
 
 
 #EEEEENNNNDDDD
-print("");
-print('Testes Terminés');
