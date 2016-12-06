@@ -55,19 +55,35 @@ def main():
     if not (test_envue()):
         print('Erreur fonction en vue');
 
+    if not (test_non_envue()):
+        print('Erreur fonction en vue');
+
+    if not (test_est_Pas_DansGrille()):
+        print('Erreur fonction est dans grille');
+
     if not (test_estDansGrille()):
         print('Erreur fonction est dans grille');
 
-
     if not (test_estBateau()):
+        print('Erreur fonction est bateau');
+
+    if not (test_est_Pas_Bateau()):
         print('Erreur fonction est bateau');
 
     if not (test_verificationCoordonnee()):
         print('Erreur fonction verification coordonnees');
 
+    if not (test_non_verificationCoordonnee()):
+        print('Erreur fonction verification coordonnees');
 
     if not (test_estValide()):
         print('Erreur fonction est valide');
+
+    if not (test_est_Non_Valide()):
+        print('Erreur fonction est valide');
+
+    if not (test_non_estVide()):
+        print('Erreur fonction est vide');
 
     if not (test_estVide()):
         print('Erreur fonction est vide');

@@ -13,10 +13,10 @@ from main import *;
 def test_creation_flotte():
     try:
         FlotteTest=Flotte();
-        return true;
+        return True;
 
     except:
-        return false;
+        return False;
 
 
 #FlotteTest=[2,1,6,8,3]
@@ -25,9 +25,9 @@ def test_creation_flotte():
 def test_ajouter_bateau():
     try:
         FlotteTest.ajouterBateau(2);
-        return true;
+        return True;
     except:
-        return false;
+        return False;
 
 
 
@@ -39,30 +39,30 @@ def test_taille():
     FlotteTest.ajouterBateau(8);
     FlotteTest.ajouterBateau(3);
     if (FlotteTest.taille(2)!=6):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 #--------------------------touche------------------------------
 def test_touche():
     FlotteTest.touche(2);
 
     if (FlotteTest.taille(2)!=5):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
-#-----------------------------coule_false----------------
-def test_coule_false():
+#-----------------------------coule_False----------------
+def test_coule_False():
     if (FlotteTest.coule(1)!=False):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
 #--------------------------------coule_True---------------
-def test_coule_true():
+def test_coule_True():
     FlotteTest.touche(2);
     FlotteTest.touche(2);
     FlotteTest.touche(2);
@@ -70,9 +70,9 @@ def test_coule_true():
     FlotteTest.touche(2);
 
     if (FlotteTest.coule(1)!=True):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
 
@@ -88,18 +88,18 @@ def test_coule_true():
 def test_Joueur():
     try:
         joueur1=Joueur(ilias)
-        return true;
+        return True;
     except:
-        return false;
+        return False;
 
 
 #---------------------------name--------------------
 
 def test_name():
     if (joueur1.name()!='ilias'):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
 
@@ -120,10 +120,10 @@ def test_name():
 
 def test_grille():
     try:
-        GrilleTest=Grille()
-        return true;
+        GrilleTest=Grille(4)
+        return True;
     except:
-        return false;
+        return False;
 
 
 
@@ -132,17 +132,17 @@ def test_grille():
 def test_placerPositionBateau():
     try:
         GrilleTest.placerPositionBateau(0,0,0);
-        return true;
+        return True;
     except:
-        return false;
+        return False;
 
 
 def test_placerPositionBateau_trop_eloigne():
     try:
         GrilleTest.placerPositionBateau(0,0,2);
-        return false;
+        return False;
     except:
-        return true;
+        return True;
 
 
 
@@ -158,9 +158,9 @@ GrilleTest.placerPositionBateau(1,2,2);
 
 def test_getBateau():
     if (GrilleTest.getBateau(2,2)!=1):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
 
@@ -173,9 +173,9 @@ def test_supprimerPosition():
     GrilleTest.supprimerPosition(2,0)
 
     if (GrilleTest.estBateau(2,0)==True):
-         return false;
+         return False;
     else :
-        return true;
+        return True;
 
 
 
@@ -185,22 +185,31 @@ def test_supprimerPosition():
 
 def test_envue():
     if (GrilleTest.envue(1,2)!=True):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
-
+def test_non_envue():
+    if (GrilleTest.envue(1,3)!=False):
+        return False;
+    else :
+        return True;
 
 #-------------------------estDansGrille-------------------
 
-def test_estDansGrille():
+def test_est_Pas_DansGrille():
     if (GrilleTest.estDansGrille(4,2)!=False):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
+def test_estDansGrille():
+    if (GrilleTest.estDansGrille(3,2)!=True):
+        return False;
+    else :
+        return True;
 
 
 
@@ -208,11 +217,15 @@ def test_estDansGrille():
 
 def test_estBateau():
     if (GrilleTest.estBateau(0,1)!=True):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
-
+def test_est_Pas_Bateau():
+    if (GrilleTest.estBateau(0,2)!=False):
+        return False;
+    else :
+        return True;
 
 
 
@@ -220,11 +233,15 @@ def test_estBateau():
 
 def test_verificationCoordonnee():
     if (GrilleTest.verificationCoordonnee(2,1)!=False):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
-
+def test_non_verificationCoordonnee():
+    if (GrilleTest.verificationCoordonnee(1,1)!=True):
+        return False;
+    else :
+        return True;
 
 
 
@@ -232,20 +249,16 @@ def test_verificationCoordonnee():
 
 def test_estValide():
     if (GrilleTest.estValide(1,2,0)!=True):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
-
-
-
-#----------------------------estVide------------------------
-
-def test_estVide():
-    if (GrilleTest.estVide()!=False):
-        return false;
+def test_est_Non_Valide():
+    if (GrilleTest.estValide(1,3,3)!=False):
+        return False;
     else :
-        return true;
+        return True;
+
 
 
 
@@ -253,17 +266,37 @@ def test_estVide():
 
 def test_tirer():
     if (GrilleTest.tirer(0,0)!='touché'):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
 
 def test_coule():
     if (GrilleTest.tirer(0,1)!='coulé'):
-        return false;
+        return False;
     else :
-        return true;
+        return True;
 
+
+#----------------------------estVide------------------------
+
+def test_non_estVide():
+    if (GrilleTest.estVide()!=False):
+        return False;
+    else :
+        return True;
+
+
+def test_estVide():
+    GrilleTest.supprimerPosition(0,0);
+    GrilleTest.supprimerPosition(0,1);
+    GrilleTest.supprimerPosition(2,0);
+    GrilleTest.supprimerPosition(2,1);
+    GrilleTest.supprimerPosition(2,2);
+    if (GrilleTest.estVide()!=True):
+        return False;
+    else :
+        return True;
 
 
 #EEEEENNNNDDDD
