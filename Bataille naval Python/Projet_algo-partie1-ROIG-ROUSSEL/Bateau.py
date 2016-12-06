@@ -9,7 +9,7 @@ Classe Bateau
 from Position import *;
 class Bateau:
 
-	def __init__(self, taille, dir, pos):
+    def __init__(self, taille, dir, pos):
 	#		int x int x position --> Bateau
         self.positions=[];
         self.positions.append(pos);
@@ -57,28 +57,45 @@ class Bateau:
 	Sinon, on renvoie une erreur et on annule la création du bateau.
 	"""
 
-	def taille(self): return
+    def taille(self):
 	# 		Bateau --> int
+        return len(self.positions);
 
 	# Renvoie la taille du bateau (comprise entre 1 et 4).
 
-	def positions(self): return
+    def positions(self):
 	#		Bateau --> [Position]
+        return self.positions;
 
 	# Renvoie le tableau des Positions du bateau.
 
-	def nbPosTouche(self): return
+    def nbPosTouche(self):
 	#		Bateau --> int
+        nbpostouche = 0;
+        for i in range (0, taille(self)):
+            if self.positions()[i].touche() == True :
+                nbpostouche = nbpostouche+1;
+        return nbpostouche;
 
 	# Renvoie le nombre de position touché sur le bateau.
 
-	def touchePosition(pos,self): return
+    def touchePosition(pos,self):
 	#		Bateau x Position --> Bateau
+        existe = False;
+        i = 0;
+        while (existe == False and i<self.taille()):
+            if pos == self.positions()[i] :
+                existe = True;
+                self.positions()[i].devientTouche();
+            i=i+1;
+        return self;
+
 
 	# pos doit être une Position du bateau. Renvoie le Bateau avec cette position touchée.
 
-	def estCoule(self): return
+    def estCoule(self):
 	# 		Bateau --> boolean
+        return self.nbPosTouche()==self.taille();
 
 	# Renvoie True si nbPosTouche() == taille() sinon False.
 
