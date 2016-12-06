@@ -1,23 +1,48 @@
 # coding: utf8
-""" 
+"""
 Classe Bateau
 
 @author Godefroi ROUSSEL
 @author Clément ROIG
 ---------------------------------
 """
-
+from Position import *;
 class Bateau:
 
-	def __init__(self, taille, dir, pos): return
+	def __init__(self, taille, dir, pos):
 	#		int x int x position --> Bateau
+        self.positions=[];
+        self.positions.append(pos);
+
+        if dir==0:
+            for i in range (1, taille):
+                posi=Position(pos.x(),pos.y()-1);
+                self.positions.append(posi);
+        elif dir == 1:
+            for i in range (1, taille):
+                posi=Position(pos.x()-1,pos.y());
+                self.positions.append(posi);
+        elif dir == 2:
+            for i in range (1, taille):
+                posi=Position(pos.x(),pos.y()+1);
+                self.positions.append(posi);
+        elif dir == 3:
+            for i in range (1, taille):
+                posi=Position(pos.x()+1,pos.y());
+                self.positions.append(posi);
+        else:
+            raise ValueError("La direction entrée est invalide");
+
+
+
+
 
 	"""
-	Place le bateau en partant de la position passée en paramètre et en se dirigeant vers 
+	Place le bateau en partant de la position passée en paramètre et en se dirigeant vers
 	la direction souhaitée (0 pour le bas, 1 pour la gauche, 2 pour le haut, 3 pour la droite)
 	en fonction de la taille du bateau (compris entre 1 et 4).
 
-	On se place dans le "repère" suivant : 
+	On se place dans le "repère" suivant :
 
 		y
 	    ^
@@ -28,12 +53,12 @@ class Bateau:
 	  0-|------------> x
 		0
 
-	On vérifie si les positions calculées du bateau sont comprises entre 0 et 20. 
+	On vérifie si les positions calculées du bateau sont comprises entre 0 et 20.
 	Sinon, on renvoie une erreur et on annule la création du bateau.
 	"""
 
 	def taille(self): return
-	# 		Bateau --> int		
+	# 		Bateau --> int
 
 	# Renvoie la taille du bateau (comprise entre 1 et 4).
 
@@ -69,8 +94,8 @@ class Bateau:
 	2/ 	nbPosTouche(bat) == 0 et nbPosTouche(bat) <= taille(bat)
 	3/	estCoule(bat) == false
 	4/ 	nbPostTouche(touchePosition(bat)) == nbPosTouche(bat) + 1
-	5/	(nbPosTouche(bat) == taille(bat)) 
-		implique 
+	5/	(nbPosTouche(bat) == taille(bat))
+		implique
 		estCoule(bat) == True
 
-	""" 
+	"""
