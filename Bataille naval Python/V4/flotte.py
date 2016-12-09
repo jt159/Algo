@@ -6,7 +6,9 @@ class Flotte:
 
 	def __init__(self):
 		#renvoie une nouvelle flotte vide
-        #renvoie erreur si la flotte n'a pas été corectement remplacée
+        #renvoie erreur si la flotte n'a pas été correctement créée
+
+        #Explications : La flotte est un type qui enumère toutes les tailles de bateaux mais ne permet pas de les localiser
 
 
 	def ajouterBateau(self, tailleBat):

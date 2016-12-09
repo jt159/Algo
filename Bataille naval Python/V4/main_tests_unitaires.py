@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf8 -*-
-from tests_unitaires import *;
+from tests_unitaires import *
 
 def main():
 
