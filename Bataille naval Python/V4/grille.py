@@ -76,10 +76,10 @@ class Grille :
     		#Resultat: Renvoie True si la grille ne comporte plus aucun bateau, renvoie False sinon
     		#Post-conditions: bool
 
-    	def tirer(self, xTir, yTir):
-    		#Données: Grille et coordonnées (xTir,yTir)
+    	def tirer(self,flotte, xTir, yTir):
+    		#Données: Grille, flotte et coordonnées (xTir,yTir) du joueur sur lequel on tire
     		#Pré-conditions: xTir:int, yTir:int avec estDansGrille(xBat) et estDansGrille(yBat)
-    		#Resultat: Renvoie le résultat du tir (à l'eau, en vue, touché ou coulé)
+    		#Resultat: Renvoie le résultat du tir (à l'eau, en vue, touché ou coulé) et modifie la flotte et la grille en cas de tir reussi
     		#Post-conditions: resultatTir:string
 
 
