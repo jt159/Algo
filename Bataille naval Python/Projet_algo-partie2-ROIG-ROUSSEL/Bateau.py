@@ -16,28 +16,28 @@ class Bateau:
         self.positions.append(pos);
 
         if dir==0:
-            if (pos.y()-taille<0):
+            if (pos.y()-(taille-1)<0):
                 raise ValueError("Le Bateau sort de la grille ! ");
             else:
                 for i in range (1,taille):
                     posi=Position(pos.x(),pos.y()-i);
                     self.positions.append(posi);
         elif dir == 1:
-            if (pos.x()-taille<0):
+            if (pos.x()-(taille-1)<0):
                 raise ValueError("Le Bateau sort de la grille ! ");
             else:
                 for i in range (1, taille):
                     posi=Position(pos.x()-i,pos.y());
                     self.positions.append(posi);
         elif dir == 2:
-            if (pos.y()-taille>20):
+            if (pos.y()-(taille-1)>20):
                 raise ValueError("Le Bateau sort de la grille ! ");
             else:
                 for i in range (1, taille):
                     posi=Position(pos.x(),pos.y()+i);
                     self.positions.append(posi);
         elif dir == 3:
-            if (pos.x()-taille>20):
+            if (pos.x()-(taille-1)>20):
                 raise ValueError("Le Bateau sort de la grille ! ");
             else:
                 for i in range (1, taille):
@@ -84,21 +84,21 @@ class Bateau:
     def nbPosTouche(self):
 	#		Bateau --> int
         nbpostouche = 0;
-        for i in range (0, taille(self)):
-            if self.positions()[i].touche() == True :
+        for i in range (0, self.taille()):
+            if self.position(i).touche() == True :
                 nbpostouche = nbpostouche+1;
         return nbpostouche;
 
 	# Renvoie le nombre de position touché sur le bateau.
 
-    def touchePosition(pos,self):
+    def touchePosition(self,pos):
 	#		Bateau x Position --> Bateau
         existe = False;
         i = 0;
         while (existe == False and i<self.taille()):
-            if pos == self.positions()[i] :
+            if pos == self.position(i) :
                 existe = True;
-                self.positions()[i].devientTouche();
+                self.position(i).devientTouche();
             i=i+1;
         return self;
 

@@ -41,21 +41,21 @@ def main():
                 pos_x = -1
                 pos_y = -1
                 # Contrôle position
-                while (pos_x > 20 and pos_x < 0 and pos_y > 20 and pos_y < 0):
+                while (pos_x > 20 or pos_x < 0 or pos_y > 20 or pos_y < 0):
                 	print noms[j]," saisit la coordonée x (comprise entre 0 et 20) d'une extrémité du bateau ", i
-                	pos_x = raw_input()
+                	pos_x = input()
 
                 	print noms[j]," saisit la coordonée y (comprise entre 0 et 20) d'une extrémité du bateau  ", i
-                	pos_y = raw_input()
+                	pos_y = input()
                 # sortie de boucle : 0 <= pos_x <= 20 ET 0 <= pos_y <= 20
 
                 bat_pos = Position(pos_x,pos_y)
 
                 bat_dir = -1
                 # Contrôle direction
-                while (bat_dir < 0 and bat_dir > 3):
+                while (bat_dir < 0 or bat_dir > 3):
                 	print "Saisir la direction du bateau (0 bas, 1 gauche, 2 haut, 3 droite)"
-                	bat_dir = raw_input()
+                	bat_dir = input()
                 # sortie de boucle : 0 <= bat_dir <= 3
 
                 # il n'y a pas de bateau de taille 5, on en saisit un de taille 3 supplémentaire
@@ -84,11 +84,11 @@ def main():
     	pos_x = -1
     	pos_y = -1
     	# Contrôle position
-    	while (pos_x > 20 and pos_x < 0 and pos_y > 20 and pos_y < 0):
+    	while (pos_x > 20 or pos_x < 0 or pos_y > 20 or pos_y < 0):
             print "Saisit la coordonée x de ton tir :"
-            pos_x = raw_input()
+            pos_x = input()
             print "Saisit la coordonée y de ton tir :"
-            pos_y = raw_input()
+            pos_y = input()
 
     	# sortie de boucle : 0 <= pos_x <= 20 ET 0 <= pos_y <= 20
     	pos = Position(pos_x,pos_y)

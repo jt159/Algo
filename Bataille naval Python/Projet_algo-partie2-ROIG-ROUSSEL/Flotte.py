@@ -13,23 +13,23 @@ class Flotte:
 
     def __init__(self):
     #         --> Flotte
-        self.bateaux=[]
+        self.listebateaux=[]
 
     # Renvoie une flotte sans bateau.
 
     def nbBat(self):
     #         Flotte --> int
-        return len(self.bateaux);
+        return len(self.listebateaux);
 
     # Renvoie le nombre de bateau dans la flotte.
 
     def bateau(self,numBat):
     #         Flotte --> [Bateau]
-        return self.bateaux[numBat]
+        return self.listebateaux[numBat]
 
     def bateaux(self):
     #         Flotte --> [Bateau]
-        return self.bateaux
+        return self.listebateaux
 
     # Renvoie le tableau des bateaux présents dans la flotte.
 
@@ -41,7 +41,7 @@ class Flotte:
                     if (self.bateau(i).position(k).x()==bateau.position(j).x() or self.bateau(i).position(k).y()==bateau.position(j).y()):
                         return ValueError("Le bateau chevauche un bateau existant");
 
-        return self.bateaux.append(bateau);
+        return self.listebateaux.append(bateau);
 
 
 
@@ -51,7 +51,7 @@ class Flotte:
     def nbBatCoule(self):
     #         Flotte --> int
         n=0;
-        for i in range(0, len(self.bateaux())):
+        for i in range(0, self.nbBat()):
             if self.bateau(i).estCoule():
                 n=n+1;
         return n;

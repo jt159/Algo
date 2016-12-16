@@ -13,7 +13,7 @@ class Position:
 	#		int x int --> Position
         self.posX=x;
         self.posY=y;
-        self.touche=False;
+        self.trouee=False;
 
 	# Créer une position avec deux int compris entre 0 et 20 et touche initilialisée à false.
 
@@ -31,13 +31,13 @@ class Position:
 
     def touche(self):
 	#		Position --> boolean
-        return self.touche;
+        return self.trouee;
 
 	# Renvoie True si la position est touchée (i.e, on a déjà tiré sur cette position), sinon False.
 
     def devientTouche(self):
 	#		Position --> Position
-        self.touche = True;
+        self.trouee = True;
         return self;
 
 	# Renvoie la position avec touche passée à True.

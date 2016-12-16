@@ -1,18 +1,18 @@
 # coding: utf8
 """
-Programme de test du projet bataille navale 
+Programme de test du projet bataille navale
 
 @author Godefroi ROUSSEL
 @author Clément ROIG
 
-INDICATIONS : 
-Les lignes retournant des erreurs sont annotées d'un commentaire "# retourne une erreur". 
-Vous vérifierez qu'une erreur apparaît bien puis passerez toute la ligne en commentaire pour poursuivre les tests. 
+INDICATIONS :
+Les lignes retournant des erreurs sont annotées d'un commentaire "# retourne une erreur".
+Vous vérifierez qu'une erreur apparaît bien puis passerez toute la ligne en commentaire pour poursuivre les tests.
 ---------------------------------------------
 """
 
 # Imports des fichiers
-from Flotte import * 
+from Flotte import *
 from Bateau import *
 from Position import *
 
@@ -35,7 +35,7 @@ def testPosition():
 	else:
 		print "Echec test : position incorrecte en Y, elle n'aurait pas dû être créée"
 
-	pos = Position(3,7)	
+	pos = Position(3,7)
 
 	if testPos_x():
 		nb_test_pos_reussi += 1
@@ -62,7 +62,7 @@ def testPos_creerMauvaisePositionY():
 	except Exception:
 		return True
 	else:
-		return False		
+		return False
 
 def testPos_x():
 	pos = Position(3,7)
@@ -86,7 +86,7 @@ def testPos_devientTouche():
 ---- Test Bateau ----
 8 tests au total
 """
-def testBateau(): 
+def testBateau():
 	nb_test_bat = 8
 	nb_test_bat_reussi = 0
 
@@ -130,7 +130,7 @@ def testBat_creerBateauMauvaiseTaille():
 		return True
 	else:
 		return False
-		
+
 
 def testBat_creerBateauMauvaisePosition():
 	pos2 = Position(1,1)
@@ -148,7 +148,7 @@ def testBat_creerBateauMauvaiseDirection():
 	except Exception:
 		return True
 	else:
-		return False	
+		return False
 
 def testBat_taille():
 	pos = Position(3,7)
@@ -159,7 +159,7 @@ def testBat_positions():
 	pos = Position(8,12)
 	bat = Bateau(3,0,pos)
 	# Impossible de tester toutes les valeurs, on en teste deux aléatoires
-	return (bat.positions()[1].x()==8) and (bat.positions()[2].y()==10)
+	return (bat.position(1).x()==8) and (bat.position(2).y()==10)
 
 def testBat_nbPosTouche():
 	pos = Position(3,7)
@@ -185,7 +185,7 @@ def testBat_estCoule():
 ---- Test Flotte ----
 13 tests au total
 """
-def testFlotte(): 
+def testFlotte():
 	nb_test_flot = 13
 	nb_test_flot_reussi = 0
 
@@ -234,9 +234,9 @@ def testFlotte_nbBat2():
 def testFlotte_ajouterBateau1():
 	flot = Flotte()
 	pos1 = Position(9,7)
-	bat1 = Bateau(4,0,pos1)	
+	bat1 = Bateau(4,0,pos1)
 	pos2 = Position(15,4)
-	bat2 = Bateau(1,2,pos2)	
+	bat2 = Bateau(1,2,pos2)
 	flot.ajouterBateau(bat1)
 	flot.ajouterBateau(bat2)
 	# Les deux bateaux sont ajoutés à la flotte.
@@ -245,19 +245,19 @@ def testFlotte_ajouterBateau1():
 def testFlotte_ajouterBateau2():
 	flot = Flotte()
 	pos1 = Position(9,7)
-	bat1 = Bateau(4,2,pos1)	
+	bat1 = Bateau(4,2,pos1)
 	flot.ajouterBateau(bat1)
 
 	pos2 = Position(9,8)
-	bat2 = Bateau(3,0,pos2)	
+	bat2 = Bateau(3,0,pos2)
 	flot.ajouterBateau(bat2)
 	# Le bateau2 empiète sur le bateau1 dans la flotte, il ne doit pas être ajouté.
-	return flot.nbBat()==1	
+	return flot.nbBat()==1
 
 def testFlotte_ajouterBateau3():
 	flot = Flotte()
 	pos1 = Position(9,7)
-	bat1 = Bateau(4,0,pos1)	
+	bat1 = Bateau(4,0,pos1)
 	flot.ajouterBateau(bat1)
 	flot.ajouterBateau(bat1)
 	# Le bateau 1 ne peut pas être ajouté 2 fois à la même flotte.
@@ -297,15 +297,15 @@ def testFlotte_flotteDetruite():
 	flot.bateaux()[0].touchePosition(pos)
 	return flot.flotteDetruite()
 
-def testFlotte_verifTir1(): 
+def testFlotte_verifTir1():
 	flot = Flotte()
 	pos = Position(8,7)
 	bat = Bateau(1,0,pos)
 	flot.ajouterBateau(bat)
-	# Bateau 0 touché 
-	return flot.verifTir(flot,pos)[0]==1 and flot.verifTir(flot,pos)[1]==0
+	# Bateau 0 touché
+	return flot.verifTir(pos)[0]==1 and flot.verifTir(pos)[1]==0
 
-def testFlotte_verifTir2(): 
+def testFlotte_verifTir2():
 	flot = Flotte()
 	pos = Position(8,7)
 	bat = Bateau(1,0,pos)
@@ -313,9 +313,9 @@ def testFlotte_verifTir2():
 
 	pos2 = Position(8,15)
 	# Bateau 0 en vue
-	return flot.verifTir(flot,pos2)[0]==2 and flot.verifTir(flot,pos2)[1]==-1
+	return flot.verifTir(pos2)[0]==2 and flot.verifTir(pos2)[1]==-1
 
-def testFlotte_verifTir3(): 
+def testFlotte_verifTir3():
 	flot = Flotte()
 	pos = Position(8,7)
 	bat = Bateau(1,0,pos)
@@ -323,7 +323,7 @@ def testFlotte_verifTir3():
 
 	pos2 = Position(14,15)
 	# A l'eau
-	return flot.verifTir(flot,pos2)[0]==3 and flot.verifTir(flot,pos2)[1]==-1
+	return flot.verifTir(pos2)[0]==3 and flot.verifTir(pos2)[1]==-1
 
 # ----------------------------------------------------------------------------
 # Programme de test général bataille navale
