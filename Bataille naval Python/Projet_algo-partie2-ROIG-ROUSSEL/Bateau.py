@@ -43,6 +43,8 @@ class Bateau:
                 for i in range (1, taille):
                     posi=Position(pos.x()+i,pos.y());
                     self.positions.append(posi);
+        else:
+             raise ValueError("Direction invalide ! ");
 
 	"""
 	Place le bateau en partant de la position passée en paramètre et en se dirigeant vers

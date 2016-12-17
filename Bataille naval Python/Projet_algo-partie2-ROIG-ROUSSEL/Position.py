@@ -11,8 +11,16 @@ class Position:
 
     def __init__(self,x,y):
 	#		int x int --> Position
-        self.posX=x;
-        self.posY=y;
+        if (x>=0 and x<=20):
+            self.posX=x;
+        else:
+            raise ValueError("La Position n'est pas dans la grille  ! ");
+
+        if (y>=0 and y<=20):
+             self.posY=y;
+        else:
+            raise ValueError("La Position n'est pas dans la grille  ! ");
+
         self.trouee=False;
 
 	# Créer une position avec deux int compris entre 0 et 20 et touche initilialisée à false.

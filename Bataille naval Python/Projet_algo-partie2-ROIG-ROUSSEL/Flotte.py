@@ -24,7 +24,7 @@ class Flotte:
     # Renvoie le nombre de bateau dans la flotte.
 
     def bateau(self,numBat):
-    #         Flotte --> [Bateau]
+    #         Flotte --> Bateau     /!\ Nous avons ajouter cette fonction qui renvoie un bateau précisement
         return self.listebateaux[numBat]
 
     def bateaux(self):
