@@ -25,7 +25,7 @@ class Flotte:
 
     def bateau(self,numBat):
     #         Flotte --> Bateau     /!\ Nous avons ajouter cette fonction qui renvoie un bateau précisement
-        return self.listebateaux[numBat]
+        return self.listebateaux[numBat-1]
 
     def bateaux(self):
     #         Flotte --> [Bateau]
@@ -38,7 +38,7 @@ class Flotte:
         for j in range(0,bateau.taille()):
             for i in range(0,self.nbBat()):
                 for k in range(0,self.bateau(i).taille()):
-                    if (self.bateau(i).position(k).x()==bateau.position(j).x() or self.bateau(i).position(k).y()==bateau.position(j).y()):
+                    if (self.bateau(i).position(k).x()==bateau.position(j).x() and self.bateau(i).position(k).y()==bateau.position(j).y()):
                         return ValueError("Le bateau chevauche un bateau existant");
 
         return self.listebateaux.append(bateau);

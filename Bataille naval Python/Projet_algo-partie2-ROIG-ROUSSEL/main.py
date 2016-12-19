@@ -69,6 +69,7 @@ def main():
             # sortie de boucle : on a bien ajouté un bateau supplémentaire (nb_bat_initial < nb_bat_final)
 
 
+
     # Déroulement de la partie
 
     # compteur_tour % 2 == 1 => c'est au joueur 1 de jouer
